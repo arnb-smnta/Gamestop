@@ -1,19 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import SearchBar from "./SecondaryComponents/SearchBar";
-import { RAWG_API_KEY } from "../Utils/Constants";
 
 const Header = () => {
-  useEffect(() => {
-    apicall();
-  }, []);
-  const apicall = async () => {
-    const data = await fetch(
-      `https://api.rawg.io/api/games?token&key=${RAWG_API_KEY}`
-    );
-    const json = await data.json();
-    console.log(json);
-  };
-
   return (
     <div className="flex justify-between p-8 bg-black rounded-lg text-white">
       <img
@@ -22,12 +10,13 @@ const Header = () => {
         className="h-12"
       />
       <SearchBar />
-
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
-        alt="cart icon"
-        className="h-8 bg-white"
-      />
+      <a href="/cart">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
+          alt="cart icon"
+          className="h-8 bg-white cursor-pointer"
+        />
+      </a>
     </div>
   );
 };

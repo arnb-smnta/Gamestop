@@ -24,7 +24,7 @@ function App() {
           path: "/browse",
           element: <BrowsePage />,
         },
-        { path: `/${id}`, element: <GamePage /> },
+        { path: `/game`, element: <GamePage /> },
       ],
     },
   ]);

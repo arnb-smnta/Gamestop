@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CardContainer from "./CardContainer";
 import SideBar from "./SecondaryComponents/SideBar";
 import { useDispatch, useSelector } from "react-redux";
 import appstore from "../ReduxComponents/appstore";
 import { togglemenu } from "../ReduxComponents/menuSlice";
+import { RAWG_API_KEY } from "../Utils/Constants";
+import { updategames } from "../ReduxComponents/gameSlice";
+import apicall from "./SecondaryComponents/apicall";
 
 const BrowsePage = () => {
-  const menuvalue = useSelector((appstore) => appstore.menu.menuopen);
   const dispatch = useDispatch();
+  const games = useSelector((appstore) => appstore.game.games);
+  useEffect(() => {
+    if (!games) apicall(dispatch);
+  }, []);
+
+  const menuvalue = useSelector((appstore) => appstore.menu.menuopen);
+
   const toggle = () => {
     dispatch(togglemenu());
   };
