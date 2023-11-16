@@ -1,7 +1,10 @@
 import React from "react";
 import SearchBar from "./SecondaryComponents/SearchBar";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const Cartdata = useSelector((appstore) => appstore.cart.items);
   return (
     <div className="flex justify-between p-8 bg-black rounded-lg text-white">
       <img
@@ -11,11 +14,15 @@ const Header = () => {
       />
       <SearchBar />
       <a href="/cart">
+        {" "}
         <img
           src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
           alt="cart icon"
           className="h-8 bg-white cursor-pointer"
         />
+        {Cartdata.length ? (
+          <p className="absolute  ">{Cartdata.length}</p>
+        ) : null}
       </a>
     </div>
   );

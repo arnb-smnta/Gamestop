@@ -13,8 +13,7 @@ const HomePage = () => {
             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             Exercitationem expedita rerum, aspernatur repudiandae earum
             voluptatem. Tempore assumenda accusantium qui velit quisquam
-            explicabo minus fugit! Non, atque! Quibusdam nobis blanditiis
-            excepturi.
+            explicabo minus fugit! Non, atque! Quibusdam nobis blanditiis excep
           </p>
         </div>
         <div className="m-4 flex">
@@ -24,9 +23,12 @@ const HomePage = () => {
       </div>
       <div className="col-span-6 pt-[24rem] pl-[86rem]">
         <ul>
+          {console.log(LINK_TAGS)}
           {LINK_TAGS.map((tags) => (
             <Link to={tags.link}>
-              <li>{tags.name}</li>
+              <li className="bg-black" key={tags.link}>
+                {tags.name}
+              </li>
             </Link>
           ))}
         </ul>

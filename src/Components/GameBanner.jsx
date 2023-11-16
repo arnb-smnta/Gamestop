@@ -5,8 +5,6 @@ import { gamepagedata } from "./SecondaryComponents/gamepagedata";
 const GameBanner = ({ gameslist, ids }) => {
   let game = gamepagedata(gameslist, ids);
 
-  console.log(game);
-
   /*const gamepic = gameslist.filter(function (game) {
     if (game.id === parseInt(ids, 10)) return game;
   });*/

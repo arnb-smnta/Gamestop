@@ -7,9 +7,9 @@ import GamePage from "./Components/GamePage";
 import Body from "./Components/Body";
 import { Provider } from "react-redux";
 import appstore from "./ReduxComponents/appstore";
+import Cart from "./Components/Cart";
 
 function App() {
-  const id = 1234;
   const approuter = createBrowserRouter([
     {
       path: "/",
@@ -25,6 +25,7 @@ function App() {
           element: <BrowsePage />,
         },
         { path: `/game`, element: <GamePage /> },
+        { path: "/cart", element: <Cart /> },
       ],
     },
   ]);

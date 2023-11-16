@@ -13,7 +13,7 @@ const GamePage = () => {
   useEffect(() => {
     if (!gameslist) apicall(dispatch);
   }, []);
-  console.log(gameslist);
+
   return (
     <div>
       {gameslist ? (
